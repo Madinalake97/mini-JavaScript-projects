@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden; /*hide the scroll bar on the x axis */
+  margin: 0;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left; /*originally this properties has their origin at the middle of the screen, by setting this we rotate the screen from the top left. */
+  transition: transform 0.5s linear; /* add little animation */
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+
+/*this one comes from the javascript click event */
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  /* we want to position only half the circle.*/
+  top: -100px;  
+  left: -100px;
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative; /* To have all the btn inside absolute position. */
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle { /* this will rotate the pink circle and reveal the X btn that hidden off-screen. */
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0; /* to take off border*/
+  font-size: 26px;
+  color: #fff;
+}     
+
+
+
+.circle button#open {
+  left: 60%;
+}
+
+
+/* x btn is off-screen waiting for the click event */
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);   /* make it rotate */
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0); /*this is to bring all the default value of translateX to its original place and show the nav bar*/
+
+  transition-delay: 0.3s; /* li will comes in a bit after the container rotate. */
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100; /* set it to make it on top of everything*/
+}
+
+nav ul {
+  list-style-type: none; /* get rid of the bullet point*/
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in; /* animation for text*/
+}
+
+nav ul li i {
+  font-size: 20px;   
+  margin-right: 10px;
+}
+
+nav ul li + li {/* the lines after the initials are going to stick out 15 px */
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+
+
+nav ul li + li + li {  /* the third li lines after the initial ones is going to stick out 30 px */  
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+nav a{
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #FF7979;
+  font-weight: bold;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto; /* 50 px top and bottom, left and right are auto. */  
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}

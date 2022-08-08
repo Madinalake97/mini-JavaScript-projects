@@ -1,0 +1,25 @@
+<!-- we want to be able to type in the textarea and split by comma then create the tags below after we hit enter -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Random Choice Picker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>
+        Enter all of the choices divided by a comma (','). <br />
+        Press enter when you're done
+      </h3>
+      <textarea placeholder="Enter choices here..." id="textarea"></textarea>
+
+      <!-- this is going to be a spans with the class of tag and will be inserted by the JavaScript.-->
+      <div id="tags"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

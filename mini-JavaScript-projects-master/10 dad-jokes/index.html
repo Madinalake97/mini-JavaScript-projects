@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dad Jokes</title>
+  </head>
+  <body>
+    <!-- we getting all these jokes from third party API. We're going to use the fetch API that built into the browser to make a request and get an object with an ID, a joke and a status. Then we are putting all of them to our application-->
+
+    <!-- this is a good example of practing for the use of the ES6 because when you deal with fetch, you'll deal with Promises and Async-Await.-->
+    <div class="container">
+      <h3>Don't Laugh Challenge</h3>
+      <div id="joke" class="joke">// Joke goes here</div>
+      <button id="jokeBtn" class="btn">Get Another Joke</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
